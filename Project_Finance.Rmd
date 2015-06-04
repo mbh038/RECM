@@ -1,0 +1,47 @@
+---
+title: "Financing Projects"
+author: "mbh038"
+date: "Thursday, June 04, 2015"
+output: html_document
+---
+
+Finance spreadsheet
+
+In this session we learn how to evaluate the viability of a project through the use of three measures:
+
+* Pay back time
+* Net Present Value (NPV)
+* Internal Rate of Return (IRR)
+
+We will set up a spreadsheet to calculate these three, then try to work out what they are actually telling us!
+
+A key concept we will use in all of these is that of _discounting_. This is the idea that transactions in the future are worth less, the further into the future that they occur. This is relevant to any energy generation project, which typically has large capital expenses at the beginning and then a steady drip,drip of returns every year throughout the project lifetime, which may be for 20 or more years or even for many more if it is a large scale hydroelectric, tidal range or nuclear project., where final disposal and clean-up operations may not take place until several decades oreven a a century or so after initial construction! The discounting idea says that those earnings or disposal costs are worth less than if they had occurrred all at once, at the beginning of the project. Eh? Let us explore this.
+
+Suppose the capital cost of a wind turbine project is £100,000, and suppose that the project has net annual earnings of £10,000 over a project lifetime of 20 years. The simple payback time is the capital expense divided by the annual earnings:
+
+$$\mathrm{Simple\ Payback\ Time}=\dfrac{\mathrm{Capital\ Expenses}}{\mathrm{Annual\ Revenues}}$$        (1)
+
+For the project just mentioned, the simple pay back time would be 10 years, since it takes that long to make good the original capital cost of £100,000 with annual earnings of £10,000. Simple pay back has the merit that it is easy to grasp as an idea and easy to calculate, but the downside that it's accuracy is uncertain, and it is likely to underestimate actual pay back times. 
+
+To see this, we need to grasp what we mean by "pay back time". Let us here take this to mean, the time it takes for the project owner to be better off than if they had not carried out the project, but used the money for some other purpose. Now, suppose instead the money had been put into an account with an interest rate of 5%. After 10 years, an initial sum of £100,000 would have increased in value by a factor $(1+0.05)10 = 1.63$ and become worth £163,000. Hence our wind turbine project would not have left us in a better place, financially after ten years than the much easier alternative of putting the money in the bank account. We would by then have made good the original £100,000 outlay, but would be £63,000 worse off than if we had put the money in the bank account, or invested it in any other project that has earned us 5% of the outlay per year. In this sense, the project has not paid back after ten years, but will take longer to do so.
+
+In its simplest form, the discounting idea turns this view on its head and, instead of asking what a sum of money today would be worth in _x_ years time, if it accrued interest at _y_%, asks what sum of money would one need to invest now for it to be worth a particular value in _x_ years time, if the same interest rate of _y_% applied. 
+
+This is calculated as follows
+
+Assume a discount rate of 6% %. This means that for a sum of money to be worth £100 in 1 year's time, the sum that needs to be invested is £94.30, since $94.3 \times (1+0.06) =100$. If we need £100 in two years time, then the sum we need to invest is £89.00, since $89 \times (1+0.06)^2$ = 100. And so on. If we want a sum to worth £100 after n years, at 6% interest, we need to invest $100 / (1.06)n$.
+
+Now, think of each of the annual earnings of the wind energy generation project mentioned above, over the 20 year life-time of the project. If those earnings are £10,000 per year, that sounds as though the project will earn a total of $20 \times £10,000 = £200,000$, so that with the initial outlay of £100,000, the net value (profit) of the project would be £100,000. But this is wrong because these earnings all occur at  times in the future, not now, so that their value on paper could be generated at those times by investing a smaller sum in the present : the further into the future they occur, the smaller that sum is.. The effective worth (usually referred to as the "present value") of the earnings of the n th year is $£10,000 / (1 + y/100)^n$, since that is the sum that needs to be invested, at y% interest rate, to generate £10,000 at a time n years in the future. This is the idea of discounting. The total present value of the annual earnings over the twenty years of the project is then the sum of these discounted annual earnings, and the so called net present value (NPV) of the project is this sum of discounted earnings less any costs of the project, which also must be discounted if they occur over an extended period of time. For most energy generation projects, there will be a large initial capital outlay and then a series of annual operation and maintenance costs, plus any borrowing repayments that need to be made.
+
+The NPV of a project of lifetime N years, annual earnings x and discount rate y % is given by
+
+$$\mathrm{NPV}=\displaystyle\sum_{n=1}^N\dfrac{x}{{\left(1+\frac{y}{100}\right)^n}}=x\displaystyle\sum_{n=1}^N\left(1+ \dfrac{y}{100}\right)^n$$	
+
+
+This value will be less than the anuual earnings multiplied by the lifetime of the project.
+
+The net present value of a project must be positive for the project to make any financial sense at all, since it represents the effective bank balance of the project at the end of its life: the earnings must exceed the costs, all values discounted to their present value. The greater the NPOV od a project, the more attractive it is.
+
+The pay back time of the project will be the time it takes for the bank balance of the project to become positive. This time must be less than the lifetime of the project, and is often required to be very much less than that. Clearly, if the payback time of a project exceeds its lifetime, its NPV is negative, and the shorter the payback time the larger the NPV of a project is likely to be.
+
+The internal rate of return (IRR) is the discount rate required to bring the NPV to zero. It is a measure of the value of a project and is a useful tool in comparing one project with another. The higher the IRR of a project, the greater the perceived likelihood that it will make a profit. Thuis if two investment schemes are available for the the same capital, the one that offers the higher IRR is the more attractive.
