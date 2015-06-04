@@ -2,10 +2,15 @@
 title: "Financing Projects"
 author: "mbh038"
 date: "Thursday, June 04, 2015"
+header-includes:
+   - \usepackage{mathtools}
+   - \usepackage{amsmath}
+   - \input eplain
+   - \leftdisplays
 output: html_document
 ---
 
-Finance spreadsheet
+## Three financial measures ofa project
 
 In this session we learn how to evaluate the viability of a project through the use of three measures:
 
@@ -15,17 +20,60 @@ In this session we learn how to evaluate the viability of a project through the 
 
 We will set up a spreadsheet to calculate these three, then try to work out what they are actually telling us!
 
-A key concept we will use in all of these is that of _discounting_. This is the idea that transactions in the future are worth less, the further into the future that they occur. This is relevant to any energy generation project, which typically has large capital expenses at the beginning and then a steady drip,drip of returns every year throughout the project lifetime, which may be for 20 or more years or even for many more if it is a large scale hydroelectric, tidal range or nuclear project., where final disposal and clean-up operations may not take place until several decades oreven a a century or so after initial construction! The discounting idea says that those earnings or disposal costs are worth less than if they had occurrred all at once, at the beginning of the project. Eh? Let us explore this.
+A key concept we will use in all of these is that of _discounting_. This is the idea that transactions in the future are worth less, the further into the future that they occur. This is relevant to any energy generation project, which typically has large capital expenses at the beginning and then a steady drip,drip of returns every year throughout the project lifetime, which may be for 20 or more years or even many more if it is a large scale hydroelectric, tidal range or nuclear project, where final disposal and clean-up operations may not take place until several decades or even a a century or so after initial construction! The discounting idea says that those earnings or disposal costs are worth less than if they had occurrred all at once, at the beginning of the project. Eh? Let us explore this, first by measuring a the financial merits of a project without the idea of discounting
 
-Suppose the capital cost of a wind turbine project is £100,000, and suppose that the project has net annual earnings of £10,000 over a project lifetime of 20 years. The simple payback time is the capital expense divided by the annual earnings:
+## 'Simple' Financial Measures
 
-$$\mathrm{Simple\ Payback\ Time}=\dfrac{\mathrm{Capital\ Expenses}}{\mathrm{Annual\ Revenues}}$$        (1)
+'Simple' measures of the financial merit of a project do not take discounting into account.
 
-For the project just mentioned, the simple pay back time would be 10 years, since it takes that long to make good the original capital cost of £100,000 with annual earnings of £10,000. Simple pay back has the merit that it is easy to grasp as an idea and easy to calculate, but the downside that it's accuracy is uncertain, and it is likely to underestimate actual pay back times. 
+Suppose the capital cost of a wind turbine project is £100,000, and suppose that the project has net annual earnings of £10,000 over a project lifetime of 20 years. The simple payback time is the capital expense divided by the annual earnings. For this project it would be 10 years:
 
-To see this, we need to grasp what we mean by "pay back time". Let us here take this to mean, the time it takes for the project owner to be better off than if they had not carried out the project, but used the money for some other purpose. Now, suppose instead the money had been put into an account with an interest rate of 5%. After 10 years, an initial sum of £100,000 would have increased in value by a factor $(1+0.05)10 = 1.63$ and become worth £163,000. Hence our wind turbine project would not have left us in a better place, financially after ten years than the much easier alternative of putting the money in the bank account. We would by then have made good the original £100,000 outlay, but would be £63,000 worse off than if we had put the money in the bank account, or invested it in any other project that has earned us 5% of the outlay per year. In this sense, the project has not paid back after ten years, but will take longer to do so.
 
-In its simplest form, the discounting idea turns this view on its head and, instead of asking what a sum of money today would be worth in _x_ years time, if it accrued interest at _y_%, asks what sum of money would one need to invest now for it to be worth a particular value in _x_ years time, if the same interest rate of _y_% applied. 
+$$
+\begin{align*}
+\mathrm{Simple\ Payback\ Time}&=\dfrac{\mathrm{Capital\ Expenses}}{\mathrm{Annual\ Net\ Revenues}}\\
+&=\dfrac{£100,000}{£10,000}\\
+&=10\ \mathrm{years}\\
+\shortintertext{\mathrm{The\ Simple\ Net\ Value\ of\ the\ project\ would\ be\ £100,000}}
+\shortintertext{\hbox{Whilst for $2 \times 2$ we have:}}
+&=£200,000-£100,000\\
+&=£100,000
+\end{align*}
+$$
+
+
+$$ \def\vmatrix#1{\left|\matrix{#1}\right|}
+  \eqalignno{
+    \vmatrix{a&b&c\cr d&e&f\cr g&h&i} &= aei + bfg + cdh - afh - bdi - ceg \cr
+\noalign{\hbox{Whilst for $2 \times 2$ we have:}} % break away from the align
+    \vmatrix{a&b\cr c&d} &= ad - bc
+  }
+$$
+
+\noalign{\mathrm{Net\ Value}&=\mathrm{Total\ Net\ Revenues -\ Capital\ Outlay}\\}
+
+Simple measures have the merit that they are easy to grasp as an idea and easy to calculate, but in neglecting discounting, they are likely to underestimate the actual pay back time and overestimate the actual net value of a project.. 
+
+### The meaning of pay back time
+
+To see this, we need to grasp what we mean by "pay back time". Let us here take this to mean, the time it takes for the project owners to be better off than if they had not carried out the project, but instead had used the money for some other purpose. 
+
+Now, suppose instead the money had been put into an account with an interest rate of 5%. After 10 years, an initial sum of £100,000 would have increased in value by a factor $(1+0.05)^10 = 1.63$ and become worth £163,000. Hence our wind turbine project would not have left us in a better place, financially after ten years than the much easier alternative of putting the money in the bank account. We would by then have made good the original £100,000 outlay, but would be £63,000 worse off than if we had put the money in the bank account, or invested it in any other project that has earned us 5% of the outlay per year. In this sense, the project has not paid back after ten years, but will take longer to do so.
+
+### The idea of discounting
+
+In its simplest form, the discounting idea turns this view on its head and, instead of asking what a sum of money _R_ invested today would be worth in _i_ years time, if it accrued interest at _x_%, asks instead what sum of money $R_i$ would one need to invest now for it to be worth _R_ in _i_ years time, if the same interest rate of _x_% applied.This, in a sense, is what that sum of money, generated in the future, is _really_ worth to us today. We call this its _Present value_
+
+In the context of an energy generation project that generated net cashflows $R_i$ in each year i of the project, we want to know what the present value of each of these future cash flows would be. When the sum of these flowa exceeds the initial capital outlay, the project can be said to have payed for itself. The time it takes for this to occur is the pay back time of the project, and the sum of all these discounted cash flows, minus the capital outlay, is the _Net Present value_ of the project. 
+
+Elt's explore these ideas in the context of our wind turbine example.
+
+If the wind turbine generates $R_5=£10,000$ of revenue in its fifth year of operation, what is that actuall worth to us today? Less than £10,000, to be sure, and $R_6$, the revenue generated in the 6th year would be weorth even less, and so on.
+
+The _Net Present Value_ is a measure of the overall financial worth of the project, so it is the sum of all the annual cash flows over the lifetime of the project. Without discounting, this is simply the sum of the net annual revenues minus the initial capital cost. So, for our turbine example, this would be $20 \times £10000 - £100,000 = £100,000$
+. 
+
+extending this idea, 
 
 This is calculated as follows
 
