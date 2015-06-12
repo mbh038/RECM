@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.7)  12 JUN 2015 05:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.7)  12 JUN 2015 05:49
 entering extended mode
 **C:/Users/Mike/RECM/CORC2089*WE/WindExam2014-2015.tex
 ("C:/Users/Mike/RECM/CORC2089 WE/WindExam2014-2015.tex"
@@ -834,27 +834,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--168
 File: ./figures/E3120.png Graphic file (type png)
 
 <use ./figures/E3120.png>
-Package pdftex.def Info: ./figures/E3120.png used on input line 178.
+Package pdftex.def Info: ./figures/E3120.png used on input line 177.
 (pdftex.def)             Requested size: 227.62204pt x 149.5253pt.
  <./figures/AEP.png, id=24, 362.3136pt x 238.0092pt>
 File: ./figures/AEP.png Graphic file (type png)
 
 <use ./figures/AEP.png>
-Package pdftex.def Info: ./figures/AEP.png used on input line 180.
+Package pdftex.def Info: ./figures/AEP.png used on input line 179.
 (pdftex.def)             Requested size: 227.62204pt x 149.5253pt.
 
 <./figures/callywith.png, id=25, 359.9046pt x 211.0284pt>
 File: ./figures/callywith.png Graphic file (type png)
 
 <use ./figures/callywith.png>
-Package pdftex.def Info: ./figures/callywith.png used on input line 182.
-(pdftex.def)             Requested size: 227.62204pt x 133.46701pt.
+Package pdftex.def Info: ./figures/callywith.png used on input line 181.
+(pdftex.def)             Requested size: 295.90587pt x 173.51453pt.
 
 <./figures/vectors.jpg, id=26, 1514.7792pt x 1124.5212pt>
 File: ./figures/vectors.jpg Graphic file (type jpg)
 
 <use ./figures/vectors.jpg>
-Package pdftex.def Info: ./figures/vectors.jpg used on input line 239.
+Package pdftex.def Info: ./figures/vectors.jpg used on input line 238.
 (pdftex.def)             Requested size: 386.96024pt x 287.2553pt.
  [4] [5 <C:/Users/Mike/RECM/CORC2089 WE/figures/E3120.png> <C:/Users/Mike/RECM/
 CORC2089 WE/figures/AEP.png> <C:/Users/Mike/RECM/CORC2089 WE/figures/callywith.
@@ -878,7 +878,7 @@ onts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on WindExam2014-2015.pdf (7 pages, 447452 bytes).
+Output written on WindExam2014-2015.pdf (7 pages, 447448 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
