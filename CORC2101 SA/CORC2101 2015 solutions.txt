@@ -1,0 +1,29 @@
+\documentclass[a4paper,12pt,fleqn]{article}
+\setlength{\parindent}{0em}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{comment}
+
+% Unit definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareSIUnit\kilowatthour{kWh}
+\DeclareSIUnit\kilowattpeak{kW_P}
+\DeclareSIUnit\kVA{kVA}
+\DeclareSIUnit\kVAR{kVAR}
+\DeclareSIUnit\year{y}
+\DeclareSIUnit\north{N}
+\DeclareSIUnit\south{S}
+\DeclareSIUnit\second{s}
+
+\begin {document}
+
+Question One
+
+(a) $\mathrm{HLC (conduction)}=\sum{U_iA_i}=0.2\times 100+0.2\times 50+0.25\times 80 +1.0 \times 20=\SI{100}{\watts\per\kelvin}$
+\end{document}

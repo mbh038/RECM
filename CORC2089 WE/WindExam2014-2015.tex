@@ -1,0 +1,407 @@
+% ANUfinalexam.tex (Version 2.0)
+% ===============================================================================
+% Australian National University Final Exam LaTeX template.
+% 2004; 2009, Timothy Kam, ANU School of Economics
+% Licence type: Free as defined in the GNU General Public Licence: http://www.gnu.org/licenses/gpl.html
+
+\documentclass[a4paper,12pt,fleqn]{article}
+\setlength{\parindent}{0em}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{comment}
+
+% Unit definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareSIUnit\kilowatthour{kWh}
+\DeclareSIUnit\kilowattpeak{kW_P}
+\DeclareSIUnit\kVA{kVA}
+\DeclareSIUnit\kVAR{kVAR}
+\DeclareSIUnit\rpm{rpm}
+\DeclareSIUnit\year{y}
+\DeclareSIUnit\north{N}
+\DeclareSIUnit\south{S}
+\DeclareSIUnit\second{s}
+\DeclareSIUnit\pence{p}
+
+
+% Insert your course information here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\institution}{CORNWALL COLLEGE}
+\newcommand{\titlehd}{BSc Renewable Energy and Carbon Management}
+\newcommand{\examtype}{Exam}
+\newcommand{\examdate}{Academic Year 2014-2015}
+\newcommand{\examcode}{CORC2089}
+\newcommand{\examtitle}{Wind Energy}
+\newcommand{\readtime}{15 Minutes}
+\newcommand{\writetime}{Two Hours}
+\newcommand{\materials}{Non-programmable Calculators; Formula Sheet}
+\newcommand{\middlewords}{Exam continues on next page}
+\newcommand{\lastwords}{End of Exam}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setcounter{MaxMatrixCols}{10}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+% ANU Exams Office mandated margins and footer style
+\setlength{\topmargin}{0cm}
+\setlength{\textheight}{9.75in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textwidth}{16cm}
+\pagestyle{fancy}
+\lhead{} 
+\chead{} 
+\rhead{} 
+\lfoot{} 
+\cfoot{\footnotesize{Page \thepage \ of \pageref{finalpage} -- \titlehd \ (\examcode)}} 
+\rfoot{} 
+
+% DEPRECATED: ANU Exams Office mandated margins and footer style
+%\setlength{\topmargin}{0cm}
+%\setlength{\textheight}{9.25in}
+%\setlength{\oddsidemargin}{0.0in}
+%\setlength{\evensidemargin}{0.0in}
+%\setlength{\textwidth}{16cm}
+%\pagestyle{fancy}
+%\lhead{} %left of the header
+%\chead{} %center of the header
+%\rhead{} %right of the header
+%\lfoot{} %left of the footer
+%\cfoot{} %center of the footer
+%\rfoot{Page \ \thepage \ of \ \pageref{finalpage} \\
+%       \texttt{\examcode}} %Print the page number in the right footer
+
+\renewcommand{\headrulewidth}{0pt} %Do not print a rule below the header
+\renewcommand{\footrulewidth}{0pt}
+
+
+\begin{document}
+
+% Title page
+
+\begin{center}
+%\vspace{5cm}
+\large\textbf{\institution}
+\end{center}
+\vspace{1cm}
+
+\begin{center}
+\textit{ \examtype -- \examdate}
+\end{center}
+\vspace{1cm}
+
+\begin{center}
+\large\textbf{\titlehd}
+\end{center}
+
+\begin{center}
+\large\textbf{\examcode}
+\end{center}
+\begin{center}
+\large\textbf{\examtitle}
+\end{center}
+\vspace{4cm}
+\vspace{4cm}
+
+\begin{center}
+%\textit{Reading Time: \readtime}
+\end{center}
+\begin{center}
+\textit{Time Allowed:  \writetime}
+\end{center}
+\begin{center}
+\textit{Permitted Materials: \materials}
+\end{center}
+
+% End title page
+\newpage
+\textbf{Formulae and constants}
+\newline\newline
+$\mathrm{Star: }V_\mathrm{L}=\sqrt{3}V_\mathrm{P}$
+\newline\newline
+$\mathrm{Star: }I_\mathrm{L}=I_\mathrm{P}$
+\newline\newline
+$\mathrm{Delta: }V_\mathrm{L}=V_\mathrm{P}$
+\newline\newline
+$\mathrm{Delta: }I_\mathrm{L}=\sqrt{3}I_\mathrm{P}$
+\newline\newline
+$P=3V_\mathrm{P}I_\mathrm{P}=\sqrt{3}V_\mathrm{L}I_\mathrm{L}$
+\newline\newline
+$\mathrm{rpm}=\dfrac{60f}{n_\mathrm{P}}$
+\newline\newline
+$\mathrm{Tip\ speed\ }u=\dfrac{\mathrm{rpm}}{60}\cdot\pi D$
+\newline\newline
+$\mathrm{TSR\ }\lambda=\dfrac{u}{v}$
+\newline\newline
+$P=\omega\tau$
+\newline\newline
+$P=\dfrac{1}{2}\rho Av^3$
+
+\newpage
+\begin{quote}
+\textit{Answer\textbf{\ all} questions.  Note the different weightings of each question.
+Answers are expected to contain clear mathematical workings where appropriate.}
+\end{quote}
+\newpage
+\begin{figure}
+\centering{
+    \includegraphics[width=0.5\textwidth]{./figures/E3120}
+    \newline\newline
+    \includegraphics[width=0.5\textwidth]{./figures/AEP}
+    \newline\newline
+    \includegraphics[width=0.65\textwidth]{./figures/callywith}
+    \caption{(top) Power and power coefficient of the wind turbine as a function of wind speed, (middle)
+     Annual energy production of the turbine as a function of mean wind speed at hub height. (bottom)
+     Wind speed duration curve at turbine site.}
+ }
+\label{figure:q1}
+\end{figure}
+
+\newpage
+\paragraph{\textbf{Question 1: (37 marks)}}
+A wind turbine has a three phase \SI{50}{\kilo\watt}, 4-pole, \SI{400}{\volt} \SI{50}{\hertz} synchronous generator that is connected in star
+ and directly coupled to the grid.
+\begin{enumerate} [label=\alph*)]
+\item \lbrack\ 2 marks ]\ Sketch the connectivity of the three coils (phases) in the generator.
+\item \lbrack\ 2 marks ] \ If \SI{400}{\volt} is the line voltage, what is the phase voltage?
+\item \lbrack\ 1 mark ] \ What is the power in each phase if the total power is \SI{50}{\kilo\watt}?
+\item \lbrack\ 2 marks ] \ If the power factor is 1, what is the line current when the total power is \SI{50}{\kilo\watt}?
+\item \lbrack\ 2 marks ] \ At what frequency does the magnetic field in the stator rotate?
+\item \lbrack\ 2 marks ] \ At what frequency does the rotor coil rotate?
+\item \lbrack\ 2 marks ] \ Name two advantages of using a 3-phase generator instead of a single phase alternator.
+\end{enumerate}
+The turbine is a horizontal axis, downwind device of low solidity with 3 rotor blades of diameter \SI{19}{\metre} which rotate at a fixed speed
+ of \SI{43}{\rpm}
+\begin{enumerate} [resume,label=\alph*)]
+\item \lbrack\ 2 marks ] \ Explain the meaning of the phrase "horizontal axis, downwind device".
+\item \lbrack\ 3 marks ] \ Explain why the turbine has been made to have low solidity.  
+\end{enumerate}
+
+The power and power coefficient as a function of wind speed and the annual energy production as a function of mean wind
+speed at hub height are shown in Figure \ref{figure:q1} (top and middle)
+
+
+
+\begin{enumerate} [resume,label=\alph*)]
+\item \lbrack\ 3 marks ] \ Show that the power coefficient is maximised when the tip speed ratio is about 6.
+\item \lbrack\ 2 marks ] \ The turbine is stall controlled. How is this evident from the power curve?
+\item \lbrack\ 2 marks ] \ If the turbine were indirectly coupled to the grid and able to operate at varying rotor speeds,
+what advantage(s) would that bring?
+\end{enumerate}
+
+The turbine is at a site where wind speeds have been monitored and where the wind speed duration curve at the hub height of the turbine is as shown in 
+Figure \ref{figure:q1} (bottom). 
+The mean wind speed at this height is \SI{6.1}{\metre\per\second}
+
+\begin{enumerate} [resume,label=\alph*)]
+\item \lbrack\ 2 marks ] \ Wind speed atlases exist for the UK, so why would the wind speeds at the site have been monitored?
+\item \lbrack\ 2 marks ] \ What is the median wind speed at this site?
+\item \lbrack\ 2 marks ] \ For what proportion of the time is the wind turbine not generating?
+\item \lbrack\ 2 marks ] \ For what proportion of the time is the wind turbine generating \SI{50}{\kilo\watt} or more?
+\item \lbrack\ 4 marks ] \ If the rated power of this turbine is \SI{50}{\kilo\watt}, what is its capacity factor at this site?
+\end{enumerate}
+
+\paragraph{\textbf{Question 2: (11 marks)}}
+Figure \ref{figure:q2} shows a section through a rotor blade of the wind turbine of Question 1, at a point where the forward velocity
+ of the leading edge is $u$, and at a time when the wind speed is $v$.
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{./figures/vectors}
+\caption{Section through foil of turbine}
+\label{figure:q2}
+\end{figure}
+
+\begin{enumerate} [label=\alph*)]
+\item \lbrack\ 3 marks ] Identify from this diagram the quantities that represent the 
+    \begin{enumerate} [label=\roman*)]
+        \item pitch angle
+        \item angle of attack
+        \item apparent velocity
+    \end{enumerate}
+\item \lbrack\ 3 marks ] Draw a sketch to show that if the wind speed were to increase, then the angle of attack would also increase.
+\item \lbrack\ 2 marks ] If that happened, what could be done to reduce the angle of attack back to its original value?
+\item \lbrack\ 3 marks ] Explain why the rotor blade stalls if the angle of attack becomes too large.
+\end{enumerate}
+
+\begin{center}
+\vspace{3cm}
+--------- \textit{\middlewords} ---------
+\end{center}
+
+\paragraph{\textbf{Question 3: (11 marks)}}
+A \SI{6}{\kilo\watt} wind turbine on a small holding generates \SI{10000}{\kilowatthour} per year. The household uses \SI{4000}{\kilowatthour}
+per year and \SI{8000}{kilowatthour} per year is exported. The Feed-in tariff (FiT) for this turbine when commissioned was \SI{23}{\pence\per\kilowatthour},
+the export tariff was \SI{4.7}{\pence\per\kilowatthour} and the import tariff is \SI{15}{\pence\per\kilowatthour}. 
+The cost of the turbine was \SI{}{25000} pounds sterling.
+
+\begin {enumerate} [label=\alph*)]
+\item \lbrack\ 2 marks ]What is the annual income from the FiT?
+\item \lbrack\ 2 marks ]By how much is the annual electricity bill of the small holding reduced because of the turbine?
+\item \lbrack\ 3 marks ]Estimate the simple pay-back time of this turbine.
+\item \lbrack\ 2 marks ]If discounting is taken into account, what impact would that have on the pay-back time as calculated in the previous part?
+\item \lbrack\ 2 marks ]What could the owners do to reduce this payback time?
+\end{enumerate}
+
+
+\paragraph{\textbf{Question 4: (10 marks)}}
+Wind power is widely regarded as a low-carbon source of electricity. Briefly outline the circumstances (if any) under which this is true.
+A good answer will demonstrate knowledge of the actual carbon intensity of wind-produced electricity, how this compares to the carbon intensity 
+of electricity from other sources and of the factors that most contribute to it.
+
+
+\begin{center}
+\vspace{3cm}
+--------- \textit{\lastwords} ---------
+\end{center}
+
+
+\label{finalpage}
+
+\begin{comment}
+
+\newpage
+\paragraph{\textbf{Solutions} \ }
+
+\paragraph{\textbf{Solutions to Question 1: (17 marks)}}
+There is a steady flow of heat upwards through the top few kilometres of the earth's crust.  The temperature at the surface in one location (A) is \SI{10}{\celsius} and the temperature at a depth of \SI{4}\km{} beneath the surface is \SI{106}{\celsius}. The rock in this location is granite with a thermal conductivity of $k=\SI{2.5}{\watt\per\celsius\per\metre}$
+\begin{enumerate}[label=\alph*)]
+\item \lbrack\ 2 marks ]\ Calculate the temperature gradient in the rocks beneath the surface.\par
+$\dfrac{\Delta T}{x}=\dfrac{106-10}{4000}=\SI{0.024}{\celsius\per\metre}$
+\item \lbrack\ 2 marks ]\ Show that the heat flow rate per square metre of ground is \SI{60}{\milli\watt\per\metre\squared}.\par
+$\dot Q=k\dfrac{\Delta T}{x}=2.5\times 0.024 = \SI{60}{\milli\watt\per\metre\squared}$
+\end{enumerate}
+In another location (B)with the same surface temperature the same \SI{60}{\milli\watt\per\metre\squared} flows up through ground in which the granite is covered by a layer of clay \SI{1}{\kilo\metre} deep that has thermal conductivity $k=\SI{1.5}{\watt\per\celsius\per\metre}$
+\begin{enumerate}[resume,label=\alph*)]
+\item \lbrack\ 3 marks ]\ Find the temperature at the base of the clay layer.\par
+$\dfrac{\Delta T}{x}=\dfrac{\dot Q}{k}=\dfrac{0.06}{1.5}=\SI{0.04}{\celsius\per\metre}$\par
+Hence\par
+$\Delta T= 1000\times 0.04 = \SI{40}{\celsius}$\par
+so that\par
+$T_{1000}=T_0 + \Delta T = 10 + 40 = \SI{50}{\celsius}$\par
+\item \lbrack\ 3 marks ]\ Find the depth at which the temperature reaches \SI{106}{\celsius} at this location\par
+Need an additional $\Delta T$ in the granite layer of \SI{56}{\celsius} hence need an additional depth $x$ of\par
+$x=\dfrac{k \Delta T}{\dot Q}=\dfrac{2.5\times 56}{0.06}=\SI{2333}{\metre}$\par
+Hence depth at which temperature \SI{106}{\celsius} is now 1000 + 2333 = \SI{3333}{\metre}
+\item \lbrack\ 3 marks ]\ Explain the advantages to a hot dry rocks geothermal energy scheme of finding a location such as B rather than A.\par
+Higher temperatures now found nearer to the surface so drilling costs much reduced; also the impermeable nature of the clay will help keep the flowing water in the granite layer between the boreholes.
+\item \lbrack\ 2 marks ]\ Why do many geothermal energy projects have a finite lifetime?\par
+Heat extraction rate exceeds geothermal heat flux hence ground cools.\par
+\item \lbrack\ 2 marks ]\ What proportion of the UK's energy needs might reasonably come from geothermal energy if the resource were fully and sustainably exploited?\par
+About 1\%, or \SI{1}{\kilowatthour} per person per day.
+\end{enumerate}
+
+
+\paragraph{\textbf{Solutions to Question 2: (18 marks)}}
+\begin{enumerate}[label=\alph*)]
+\item \lbrack\ 4 marks ]\ Drawing from the list of words below, describe the four processes that make up the cycle shown in Figure \ref{figure:q2}\par
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c c}
+isothermal & constant & adiabatic & compression\\
+boiler & condenser & pump & turbine \\ 
+pressure & entropy & expansion&\\
+\end{tabular}
+\end{table}
+\par
+1 to 2 : Constant pressure, isothermal expansion in the boiler\par
+2 to 3 : Adiabatic expansion in the turbine\par
+3 to 4 : Constant pressure, isothermal compression in the condenser\par
+4 to 1 : Adiabatic compression in the pump.\par
+\item \lbrack\ 1 mark ]\ In which process does heat $q_\mathrm{in}$ enter the working fluid?\par
+
+In the boiler, 1 to 2
+\item \lbrack\ 1 mark ]\ What is the value of the specific heat input $q_\mathrm{in}$?\par
+$q_\mathrm{in}=h_g-h_f = 2798 - 909 = \SI{1889}{\kilo\joule\per\kg}$
+\item \lbrack\ 1 mark ]\ In which process is heat rejected by the working fluid?\par
+In the condenser 3 to 4
+\item \lbrack\ 1 mark ]\ In which process is work $w_\mathrm{out}$ done by the fluid?\par
+In the turbine 2 to 3
+\item \lbrack\ 2 marks ]\ Show that efficiency of this cycle is 28\%\par
+Cycle is reversible, hence\par $\eta=1-\frac{T_\mathrm{L}}{T_\mathrm{H}}=1-\frac{349}{486}=0.28$
+\item \lbrack\ 2 marks ]\ What is the value of the specific work output $w_\mathrm{out}$?\par
+$w=\eta\cdot q_\mathrm{in}=0.28\times 1889 = \SI{529}{\kilo\joule\per\kg}$
+\item \lbrack\ 2 marks ]\ What mass flow rate $\dot m$ of fluid would be required to achieve an output power of 1 MW?\par
+$\dot m =\frac{\dot w}{w}=\frac{\SI{1000}{\kilo\watt}}{\SI{529}{\kilo\joule\per\kg}}=\SI{1.9}{\kg\per\second}$
+\item \lbrack\ 1 mark ]\ How could the plant design be altered to achieve higher efficiency?\par
+Increase boiler pressure and hence boiler temperature
+\item \lbrack\ 1 mark ]\ If the plant has low specific work output, in what way does that affect project costs?\par
+Plant capital costs rise, since need more powerful pumps, larger pipes etc.
+\item \lbrack\ 2 marks ]\ Give two reasons why this Carnot cycle cannot be operated in practice.\par
+Mixed phase in turbine would damage turbine blades; hard to pump mixed phase; cannot easily stop condensation at precise dryness fraction required.
+\end{enumerate}
+
+\paragraph{\textbf{Solution to Question 3: (13 marks)}}
+A geothermal power plant is proposed at a site where water can be brought to the surface at \SI{185}{\celsius} and where the only available heat sink is the ambient air at \SI{20}{\celsius}. An initial proposal is to use a water-steam plant, but this is rejected in favour of an Organic Rankine cycle using n-pentane, even though this has a lower efficiency.
+$P$-$h$ and $T$-$s$ diagrams are shown for the two proposals in Figures \ref{figure:q3a} and \ref{figure:q3b} [below].
+
+
+\begin{enumerate}[label=\alph*)]
+\item \lbrack\ 2 marks ]\ Why have the plant designers not used a higher boiler pressure?\par
+Boiler pressure is chosen to be whatever makes saturation temperature a few degrees below that of the heat source so that heat transfer will take place from the source to the boiler. In this geothermal plant, this temperature thus cannot be more than about 185-10=\SI{175}{\celsius}, and that sets the pressure. A higher boiler pressure would mean a saturation temperature higher than that of the geothermal water, and so cannot be used.
+\item \lbrack\ 1 mark ]\ How can you tell from the $P$-$h$ diagrams of Figures \ref{figure:q3a} and \ref{figure:q3b} that the work input at the pumps is much less than the work output at the turbines?\par
+Clearly a much smaller enthalpy change during the pumping  process.
+\item \lbrack\ 3 marks ]\ Show that the efficiency of the water-steam plant is about 29\%.\par
+Use enthalpy values from $P$-$h$ diagram.\par
+$\eta=\dfrac{w_\mathrm{out}}{q_\mathrm{in}}=\dfrac{h_2-h_3}{h_2-h_1}=\dfrac{767}{2644}=0.29$
+\item \lbrack\ 2 marks ]\ What is the main operational reason for rejecting the water-steam cycle?\par
+Mixed phase in turbine - liquid will damage turbine blades, condenser pressure would have to be well below ambient so that air leaking in becomes a risk, and in pump-hard to pump vapour
+\item \lbrack\ 2 marks ]\ Why is a much higher mass flow rate of n-pentane required than would be required of water in the water-steam plant?\par
+Enthalpy change much smaller in turbine process, so specific work output much smaller, so flow rate needs to be higher for same output power - $\dot w=w\dot m$
+\item \lbrack\ 3 marks ]\  Name three desirable properties of refrigerant to be used in heat engines.\par
+Credit any three sensible suggestions: eg high heat capacity, thermal conductivity; chemically stable at temperatures and pressures required; zero ozone depletion potential; low GWP; non-toxic etc
+\end{enumerate}
+
+\paragraph{\textbf{Solution to Question 4: (14 marks)}}
+
+A brine to water ground source heat pump (GSHP) using the vapour compression cycle is to be installed in a new house in central England, notionally at B0W35, with under-floor heating. The refrigerant R134a is to be used. The $P$-$h$ diagram for the cycle used is shown in Figure \ref{figure:q4a} on a date in the middle of summer.
+
+\begin{enumerate} [label=\alph*)]
+\item \lbrack\ 2 marks ]\ What is meant by the expression "B0W35"?\par
+Underground brine loop at \SI{0}{\celsius} and radiator water loop at \SI{35}{\celsius}
+\item \lbrack\ 3 marks ]\ What is the coefficient of Performance (COP) of this heat pump?\par
+3.7 - from enthalpy differences found from $P$-$h$ diagram.
+\item \lbrack\ 2 marks ]\ How would the COP change if ordinarily sized radiators were used instead of under floor heating, assuming that the radiators provided sufficient heat to the house?\par
+Since smaller, radiators would need to be hotter for same heat output. Therefore COP would fall.
+\item \lbrack\ 2 marks ]\ Explain why the COP would likely be lower in winter than in summer.\par
+If ground is cooler, so is ground loop and therefore so is refrigerant in evaporator. Pressure in evaporator will therefore be lower, giving compressor more work to do to raise refrigerant pressure up to that of condenser. COP therefore falls. Also accept answer using sketches of cycle on $P$-$h$ diagram.
+\item \lbrack\ 2marks ]\ How big does the COP need to be if the carbon dioxide emissions for space heating when using a gas boiler of efficiency 90\% are to be greater than those from using the heat pump for all space heating purposes? \par
+Assume that the carbon intensity of UK electricity \SI{500}{\gram\per\kilowatthour} and that that of natural gas is \SI{200}{\gram\per\kilowatthour}.\par
+Need $\mathrm{COP}\geq \dfrac{500}{200}\cdot0.9=2.25$
+
+\item \lbrack\ 3 marks ]\ Justify the claim that heat pumps provide a sensible heating solution only in well insulated buildings.\par
+COP needs to be high for the heat pump solution to deliver emissions and cost savings, due to the carbon intensity and cost differential between fossil fuels and electricity per unit of energy. (How high depends on fossil fuel being displaced, on current prices and on grid mix). For COP to be high, radiator temperatures need to be low, and thus radiators need to be oversized. In poorly insulated houses the size of radiator required, or even of floor space if UF heating used, would become unreasonable.
+\end{enumerate}
+
+\end{comment}
+
+\end{document}
+

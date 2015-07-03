@@ -1,0 +1,72 @@
+\documentclass[a4paper,12pt,fleqn]{article}
+\setlength{\parindent}{0em}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{comment}
+\usepackage{setspace}
+
+% Unit definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareSIUnit\kilowatthour{kWh}
+\DeclareSIUnit\kilowattpeak{kW_P}
+\DeclareSIUnit\kVA{kVA}
+\DeclareSIUnit\kVAR{kVAR}
+\DeclareSIUnit\year{y}
+\DeclareSIUnit\north{N}
+\DeclareSIUnit\south{S}
+\DeclareSIUnit\second{s}
+
+\begin {document}
+
+\textbf{Question One}
+
+\begin{enumerate}[label=\alph*)]
+\begin{doublespace}
+\item $\mathrm{HLC (conduction) }=q_C=\sum{U_iA_i}=0.2\times 100+0.2\times 50+0.25\times 80 +1.0 \times 20=\SI{100}{\watt\per\kelvin}$
+\item $\mathrm{HLC (infiltration) }=q_A=\frac{nV}{3}=\frac{0.2\times 240}{3}=\SI{16}{\watt\per\kelvin}$ using $n\approx\frac{n_{50}}{20}$
+\item $\mathrm{HLP}=(q_C+q_A)/\mathrm{TFA}=\frac{100+16}{50}=\SI{2.32}{\watt\per\kelvin\per\metre\squared}$
+\item $\mathrm{Annual\ Heat\ load}=(q_C+q_A)\times DD \ \frac{24}{1000}=116\times 1800 \times \frac{24}{1000}=\SI{5011}{\kilowatthour}$
+\item Factors causing (d) to be too high: Use of intermittent heating; solar and other gains have been ignored.
+Factor causing (d) to be too low: houses not built to specification so that $q_C$ and $q_A$ are higher than calculated here.
+Actual degree days could differ from 20 year average.
+\end{doublespace}
+\item 
+\begin{align*}
+R_T&=\sum{x_i/k_i}=\frac{0.05}{0.7}+\frac{y}{0.055}=\frac{1}{U}=5\\
+\intertext{Hence}
+\frac{y}{0.055}&=5-\frac{0.05}{0.7}=4.93\\
+\intertext{so}
+y&=0.055\times 4.93 = \SI{0.27}{\metre}
+\end{align*}
+\item Heat conduction across the cavity is by conduction, convection and radiation. The radiation contribution is proportional
+to the emissivity ($0<\epsilon <1$) of the surfaces.
+Low emissivity surfaces such as shiny foil backing can significantly reduce the radiation conduction
+\item Credit: Ties bridge(are in parallel with) the air gap. They likely have a high thermal conductivity, however their total cross-sectional
+area will be much lower than that of the air in the gap. Thus their overall thermal-short effect is (designed to be) low. 
+Credit attempt at demonstrating this by calculation
+\item Credit attempts to calculate mass per $m^2$ of each component, using $m=\rho At$ where $A$ is the are fraction and $t$ is the thickness.
+\begin{table}[ht]
+\caption{Straw bale wall} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c c} % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+Component & Density & Area Fraction & Thickness & Mass & Emb. Energy / kg & Total Emb. Energy.\\  [0.5ex] %heading
+\hline % inserts single horizontal line
+Lime & 1600 & 1 & .05 & 80 &  1.03 & 82.4\\% inserting body of the table
+Straw & 120 & 1 & 0.27 & 32.4 & 0.24 & 7.8\\
+\hline
+ & & & & &Total &\SI{90.2}{\mega\joule\per\metre\squared}\\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:q1} % is used to refer this table in the text
+\end{table}
+
+\end{enumerate}
+
+\end{document}
